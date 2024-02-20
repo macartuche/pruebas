@@ -1,0 +1,3 @@
+org.springframework.test.context.ContextCustomizerFactory = ec.gob.mspz7.config.\
+    TestContainersSpringContextCustomizerFactory,ec.gob.mspz7.config.\
+    SqlTestContainersSpringContextCustomizerFactory

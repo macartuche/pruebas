@@ -1,0 +1,59 @@
+/**
+ * The Catalogo entity.
+ * @author macartuche
+ */
+entity Catalogo {
+    /** Codigo de catalogo */
+    codigo String required
+    /** descripcion */
+    descripcion String
+
+    /** nuevocampo */
+    nuevocampo String
+
+    /** valor **/
+    valor BigDecimal
+
+    /** activo */
+    activo Boolean
+
+    /** observacion */
+    observacion String
+
+}
+
+/**
+ * The Item entity.
+ * @author macartuche
+ */
+entity Item {
+    /** codigo */
+    codigo String required
+    /** codigoCatalogo */
+    codigoCatalogo String required
+    /** descripcion */
+    descripcion String
+}
+
+/**
+ * The Entity entity.
+ * @author A true hipster
+ */
+entity Pais {
+    /** nombre */
+    nombre String
+}
+
+relationship ManyToOne {
+    Item{catalogo} to Catalogo
+}
+
+relationship OneToOne {
+    Pais{region} to Item
+}
+
+paginate * with pagination
+service all with serviceImpl
+dto * with mapstruct
+
+

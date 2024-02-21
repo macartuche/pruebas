@@ -1,0 +1,40 @@
+{
+  "annotations": {
+    "changelogDate": "20240220172120"
+  },
+  "applications": "*",
+  "documentation": "The Catalogo entity.\\n@author macartuche",
+  "dto": "mapstruct",
+  "entityTableName": "catalogo",
+  "fields": [
+    {
+      "documentation": "Codigo de catalogo",
+      "fieldName": "codigo",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "documentation": "descripcion",
+      "fieldName": "descripcion",
+      "fieldType": "String"
+    },
+    {
+      "documentation": "nuevocampo",
+      "fieldName": "nuevocampo",
+      "fieldType": "String"
+    },
+    {
+      "documentation": "valor",
+      "fieldName": "valor",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "activo",
+      "fieldType": "Boolean"
+    }
+  ],
+  "name": "Catalogo",
+  "pagination": "pagination",
+  "relationships": [],
+  "service": "serviceImpl"
+}

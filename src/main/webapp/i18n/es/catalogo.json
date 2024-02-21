@@ -1,0 +1,35 @@
+{
+  "pruebasApp": {
+    "catalogo": {
+      "home": {
+        "title": "Catalogos",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Catalogo",
+        "createOrEditLabel": "Crear o editar Catalogo",
+        "search": "Buscar Catalogo",
+        "notFound": "Ningún Catalogos encontrado"
+      },
+      "created": "Un nuevo Catalogo ha sido creado con el identificador {{ param }}",
+      "updated": "Un Catalogo ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Catalogo ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Catalogo {{ id }}?"
+      },
+      "detail": {
+        "title": "Catalogo"
+      },
+      "id": "ID",
+      "codigo": "Codigo",
+      "descripcion": "Descripcion",
+      "nuevocampo": "Nuevocampo",
+      "valor": "Valor",
+      "activo": "Activo",
+      "help": {
+        "codigo": "Codigo de catalogo",
+        "descripcion": "descripcion",
+        "nuevocampo": "nuevocampo",
+        "valor": "valor"
+      }
+    }
+  }
+}

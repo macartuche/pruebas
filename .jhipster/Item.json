@@ -1,0 +1,39 @@
+{
+  "annotations": {
+    "changelogDate": "20240220172220"
+  },
+  "applications": "*",
+  "documentation": "The Item entity.\\n@author macartuche",
+  "dto": "mapstruct",
+  "entityTableName": "item",
+  "fields": [
+    {
+      "documentation": "codigo",
+      "fieldName": "codigo",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "documentation": "codigoCatalogo",
+      "fieldName": "codigoCatalogo",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "documentation": "descripcion",
+      "fieldName": "descripcion",
+      "fieldType": "String"
+    }
+  ],
+  "name": "Item",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "catalogo",
+      "relationshipName": "catalogo",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

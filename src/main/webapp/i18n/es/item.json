@@ -1,0 +1,33 @@
+{
+  "pruebasApp": {
+    "item": {
+      "home": {
+        "title": "Items",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Item",
+        "createOrEditLabel": "Crear o editar Item",
+        "search": "Buscar Item",
+        "notFound": "Ningún Items encontrado"
+      },
+      "created": "Un nuevo Item ha sido creado con el identificador {{ param }}",
+      "updated": "Un Item ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Item ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Item {{ id }}?"
+      },
+      "detail": {
+        "title": "Item"
+      },
+      "id": "ID",
+      "codigo": "Codigo",
+      "codigoCatalogo": "Codigo Catalogo",
+      "descripcion": "Descripcion",
+      "catalogo": "Catalogo",
+      "help": {
+        "codigo": "codigo",
+        "codigoCatalogo": "codigoCatalogo",
+        "descripcion": "descripcion"
+      }
+    }
+  }
+}

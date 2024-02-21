@@ -48,6 +48,8 @@ public class CacheConfiguration {
             createCache(cm, ec.gob.mspz7.domain.User.class.getName());
             createCache(cm, ec.gob.mspz7.domain.Authority.class.getName());
             createCache(cm, ec.gob.mspz7.domain.User.class.getName() + ".authorities");
+            createCache(cm, ec.gob.mspz7.domain.Catalogo.class.getName());
+            createCache(cm, ec.gob.mspz7.domain.Item.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

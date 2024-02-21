@@ -1,0 +1,116 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-item-heading" data-cy="ItemCreateUpdateHeading" jhiTranslate="pruebasApp.item.home.createOrEditLabel">
+        Crear o editar Item
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        @if (editForm.controls.id.value !== null) {
+          <div class="mb-3">
+            <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+            <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+          </div>
+        }
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="pruebasApp.item.codigo"
+            for="field_codigo"
+            [ngbTooltip]="'pruebasApp.item.help.codigo' | translate"
+            >Codigo</label
+          >
+          <input type="text" class="form-control" name="codigo" id="field_codigo" data-cy="codigo" formControlName="codigo" />
+          @if (editForm.get('codigo')!.invalid && (editForm.get('codigo')!.dirty || editForm.get('codigo')!.touched)) {
+            <div>
+              @if (editForm.get('codigo')?.errors?.required) {
+                <small class="form-text text-danger" jhiTranslate="entity.validation.required">Este campo es obligatorio.</small>
+              }
+            </div>
+          }
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="pruebasApp.item.codigoCatalogo"
+            for="field_codigoCatalogo"
+            [ngbTooltip]="'pruebasApp.item.help.codigoCatalogo' | translate"
+            >Codigo Catalogo</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="codigoCatalogo"
+            id="field_codigoCatalogo"
+            data-cy="codigoCatalogo"
+            formControlName="codigoCatalogo"
+          />
+          @if (
+            editForm.get('codigoCatalogo')!.invalid && (editForm.get('codigoCatalogo')!.dirty || editForm.get('codigoCatalogo')!.touched)
+          ) {
+            <div>
+              @if (editForm.get('codigoCatalogo')?.errors?.required) {
+                <small class="form-text text-danger" jhiTranslate="entity.validation.required">Este campo es obligatorio.</small>
+              }
+            </div>
+          }
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="pruebasApp.item.descripcion"
+            for="field_descripcion"
+            [ngbTooltip]="'pruebasApp.item.help.descripcion' | translate"
+            >Descripcion</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="descripcion"
+            id="field_descripcion"
+            data-cy="descripcion"
+            formControlName="descripcion"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="pruebasApp.item.catalogo" for="field_catalogo">Catalogo</label>
+          <select
+            class="form-control"
+            id="field_catalogo"
+            data-cy="catalogo"
+            name="catalogo"
+            formControlName="catalogo"
+            [compareWith]="compareCatalogo"
+          >
+            <option [ngValue]="null"></option>
+            @for (catalogoOption of catalogosSharedCollection; track $index) {
+              <option [ngValue]="catalogoOption">{{ catalogoOption.id }}</option>
+            }
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancelar</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Guardar</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

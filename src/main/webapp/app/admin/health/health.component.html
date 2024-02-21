@@ -29,7 +29,6 @@
                   [ngClass]="getBadgeClass(componentHealth.value!.status)"
                   jhiTranslate="{{ 'health.status.' + componentHealth.value!.status }}"
                 >
-                  {{ { UNKNOWN: 'DESCONOCIDO', UP: 'LEVANTADO', DOWN: 'CAÍDO' }[componentHealth.value!.status || 'UNKNOWN'] }}
                 </span>
               </td>
               <td class="text-center">

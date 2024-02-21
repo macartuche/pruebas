@@ -38,8 +38,8 @@ spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     url: jdbc:postgresql://localhost:5432/pruebas
-    username: pruebas
-    password:
+    username: score
+    password: score2024
     hikari:
       poolName: Hikari
       auto-commit: false
@@ -47,7 +47,7 @@ spring:
     uris: http://localhost:9200
   liquibase:
     # Remove 'faker' if you do not want the sample data to be loaded automatically
-    contexts: dev, faker
+    contexts: dev
   mail:
     host: localhost
     port: 25

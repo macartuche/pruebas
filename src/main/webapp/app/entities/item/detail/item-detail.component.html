@@ -1,0 +1,58 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (item) {
+      <div>
+        <h2 data-cy="itemDetailsHeading"><span jhiTranslate="pruebasApp.item.detail.title">Item</span></h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ item.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="pruebasApp.item.codigo" [ngbTooltip]="'pruebasApp.item.help.codigo' | translate">Codigo</span></dt>
+          <dd>
+            <span>{{ item.codigo }}</span>
+          </dd>
+          <dt>
+            <span jhiTranslate="pruebasApp.item.codigoCatalogo" [ngbTooltip]="'pruebasApp.item.help.codigoCatalogo' | translate"
+              >Codigo Catalogo</span
+            >
+          </dt>
+          <dd>
+            <span>{{ item.codigoCatalogo }}</span>
+          </dd>
+          <dt>
+            <span jhiTranslate="pruebasApp.item.descripcion" [ngbTooltip]="'pruebasApp.item.help.descripcion' | translate"
+              >Descripcion</span
+            >
+          </dt>
+          <dd>
+            <span>{{ item.descripcion }}</span>
+          </dd>
+          <dt><span jhiTranslate="pruebasApp.item.catalogo">Catalogo</span></dt>
+          <dd>
+            @if (item.catalogo) {
+              <div>
+                <a [routerLink]="['/catalogo', item.catalogo.id, 'view']">{{ item.catalogo.id }}</a>
+              </div>
+            }
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Volver</span>
+        </button>
+
+        <button type="button" [routerLink]="['/item', item.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Editar</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

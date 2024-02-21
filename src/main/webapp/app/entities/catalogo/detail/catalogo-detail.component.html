@@ -1,0 +1,60 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (catalogo) {
+      <div>
+        <h2 data-cy="catalogoDetailsHeading"><span jhiTranslate="pruebasApp.catalogo.detail.title">Catalogo</span></h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ catalogo.id }}</span>
+          </dd>
+          <dt>
+            <span jhiTranslate="pruebasApp.catalogo.codigo" [ngbTooltip]="'pruebasApp.catalogo.help.codigo' | translate">Codigo</span>
+          </dt>
+          <dd>
+            <span>{{ catalogo.codigo }}</span>
+          </dd>
+          <dt>
+            <span jhiTranslate="pruebasApp.catalogo.descripcion" [ngbTooltip]="'pruebasApp.catalogo.help.descripcion' | translate"
+              >Descripcion</span
+            >
+          </dt>
+          <dd>
+            <span>{{ catalogo.descripcion }}</span>
+          </dd>
+          <dt>
+            <span jhiTranslate="pruebasApp.catalogo.nuevocampo" [ngbTooltip]="'pruebasApp.catalogo.help.nuevocampo' | translate"
+              >Nuevocampo</span
+            >
+          </dt>
+          <dd>
+            <span>{{ catalogo.nuevocampo }}</span>
+          </dd>
+          <dt><span jhiTranslate="pruebasApp.catalogo.valor" [ngbTooltip]="'pruebasApp.catalogo.help.valor' | translate">Valor</span></dt>
+          <dd>
+            <span>{{ catalogo.valor }}</span>
+          </dd>
+          <dt><span jhiTranslate="pruebasApp.catalogo.activo">Activo</span></dt>
+          <dd>
+            <span>{{ catalogo.activo }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Volver</span>
+        </button>
+
+        <button type="button" [routerLink]="['/catalogo', catalogo.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Editar</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

@@ -1,27 +1,27 @@
 import { IItem, NewItem } from './item.model';
 
 export const sampleWithRequiredData: IItem = {
-  id: 26394,
-  codigo: 'without brr ethical',
-  codigoCatalogo: 'behest brr which',
+  id: 638,
+  codigo: 'lively',
+  codigoCatalogo: 'intelligent',
 };
 
 export const sampleWithPartialData: IItem = {
-  id: 23265,
-  codigo: 'before',
-  codigoCatalogo: 'knavishly candle',
+  id: 19819,
+  codigo: 'scram',
+  codigoCatalogo: 'brr',
 };
 
 export const sampleWithFullData: IItem = {
-  id: 19209,
-  codigo: 'where pace',
-  codigoCatalogo: 'horse misbehave flashy',
-  descripcion: 'which collaboration blanket',
+  id: 31554,
+  codigo: 'rude',
+  codigoCatalogo: 'before',
+  descripcion: 'knavishly candle',
 };
 
 export const sampleWithNewData: NewItem = {
-  codigo: 'rehospitalization genuine near',
-  codigoCatalogo: 'captain',
+  codigo: 'nor washtub',
+  codigoCatalogo: 'equally outside outstanding',
   id: null,
 };
 

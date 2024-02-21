@@ -29,8 +29,14 @@
       "fieldType": "BigDecimal"
     },
     {
+      "documentation": "activo",
       "fieldName": "activo",
       "fieldType": "Boolean"
+    },
+    {
+      "documentation": "observacion",
+      "fieldName": "observacion",
+      "fieldType": "String"
     }
   ],
   "name": "Catalogo",

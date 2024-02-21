@@ -15,7 +15,7 @@ describe('Catalogo e2e test', () => {
   const catalogoPageUrlPattern = new RegExp('/catalogo(\\?.*)?$');
   const username = Cypress.env('E2E_USERNAME') ?? 'user';
   const password = Cypress.env('E2E_PASSWORD') ?? 'user';
-  const catalogoSample = { codigo: 'yawningly' };
+  const catalogoSample = { codigo: 'why duh anxiously' };
 
   let catalogo;
 
@@ -160,21 +160,24 @@ describe('Catalogo e2e test', () => {
     });
 
     it('should create an instance of Catalogo', () => {
-      cy.get(`[data-cy="codigo"]`).type('terribly');
-      cy.get(`[data-cy="codigo"]`).should('have.value', 'terribly');
+      cy.get(`[data-cy="codigo"]`).type('tool for lest');
+      cy.get(`[data-cy="codigo"]`).should('have.value', 'tool for lest');
 
-      cy.get(`[data-cy="descripcion"]`).type('ack');
-      cy.get(`[data-cy="descripcion"]`).should('have.value', 'ack');
+      cy.get(`[data-cy="descripcion"]`).type('far whether');
+      cy.get(`[data-cy="descripcion"]`).should('have.value', 'far whether');
 
-      cy.get(`[data-cy="nuevocampo"]`).type('male amid');
-      cy.get(`[data-cy="nuevocampo"]`).should('have.value', 'male amid');
+      cy.get(`[data-cy="nuevocampo"]`).type('yum yummy beside');
+      cy.get(`[data-cy="nuevocampo"]`).should('have.value', 'yum yummy beside');
 
-      cy.get(`[data-cy="valor"]`).type('20315.76');
-      cy.get(`[data-cy="valor"]`).should('have.value', '20315.76');
+      cy.get(`[data-cy="valor"]`).type('272.02');
+      cy.get(`[data-cy="valor"]`).should('have.value', '272.02');
 
       cy.get(`[data-cy="activo"]`).should('not.be.checked');
       cy.get(`[data-cy="activo"]`).click();
       cy.get(`[data-cy="activo"]`).should('be.checked');
+
+      cy.get(`[data-cy="observacion"]`).type('fooey');
+      cy.get(`[data-cy="observacion"]`).should('have.value', 'fooey');
 
       cy.get(entityCreateSaveButtonSelector).click();
 

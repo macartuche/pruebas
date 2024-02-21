@@ -81,8 +81,32 @@
         </div>
 
         <div class="mb-3">
-          <label class="form-label" jhiTranslate="pruebasApp.catalogo.activo" for="field_activo">Activo</label>
+          <label
+            class="form-label"
+            jhiTranslate="pruebasApp.catalogo.activo"
+            for="field_activo"
+            [ngbTooltip]="'pruebasApp.catalogo.help.activo' | translate"
+            >Activo</label
+          >
           <input type="checkbox" class="form-check" name="activo" id="field_activo" data-cy="activo" formControlName="activo" />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="pruebasApp.catalogo.observacion"
+            for="field_observacion"
+            [ngbTooltip]="'pruebasApp.catalogo.help.observacion' | translate"
+            >Observacion</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="observacion"
+            id="field_observacion"
+            data-cy="observacion"
+            formControlName="observacion"
+          />
         </div>
       </div>
 

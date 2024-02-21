@@ -50,10 +50,10 @@ describe('Item Management Update Component', () => {
   describe('ngOnInit', () => {
     it('Should call Catalogo query and add missing value', () => {
       const item: IItem = { id: 456 };
-      const catalogo: ICatalogo = { id: 22469 };
+      const catalogo: ICatalogo = { id: 31075 };
       item.catalogo = catalogo;
 
-      const catalogoCollection: ICatalogo[] = [{ id: 3690 }];
+      const catalogoCollection: ICatalogo[] = [{ id: 2617 }];
       jest.spyOn(catalogoService, 'query').mockReturnValue(of(new HttpResponse({ body: catalogoCollection })));
       const additionalCatalogos = [catalogo];
       const expectedCollection: ICatalogo[] = [...additionalCatalogos, ...catalogoCollection];
@@ -72,7 +72,7 @@ describe('Item Management Update Component', () => {
 
     it('Should update editForm', () => {
       const item: IItem = { id: 456 };
-      const catalogo: ICatalogo = { id: 9844 };
+      const catalogo: ICatalogo = { id: 241 };
       item.catalogo = catalogo;
 
       activatedRoute.data = of({ item });

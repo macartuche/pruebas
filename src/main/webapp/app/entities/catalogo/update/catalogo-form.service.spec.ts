@@ -25,6 +25,7 @@ describe('Catalogo Form Service', () => {
             nuevocampo: expect.any(Object),
             valor: expect.any(Object),
             activo: expect.any(Object),
+            observacion: expect.any(Object),
           }),
         );
       });
@@ -40,6 +41,7 @@ describe('Catalogo Form Service', () => {
             nuevocampo: expect.any(Object),
             valor: expect.any(Object),
             activo: expect.any(Object),
+            observacion: expect.any(Object),
           }),
         );
       });

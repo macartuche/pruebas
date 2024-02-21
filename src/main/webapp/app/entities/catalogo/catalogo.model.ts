@@ -5,6 +5,7 @@ export interface ICatalogo {
   nuevocampo?: string | null;
   valor?: number | null;
   activo?: boolean | null;
+  observacion?: string | null;
 }
 
 export type NewCatalogo = Omit<ICatalogo, 'id'> & { id: null };

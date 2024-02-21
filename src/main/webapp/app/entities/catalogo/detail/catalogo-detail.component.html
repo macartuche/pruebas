@@ -41,9 +41,19 @@
           <dd>
             <span>{{ catalogo.valor }}</span>
           </dd>
-          <dt><span jhiTranslate="pruebasApp.catalogo.activo">Activo</span></dt>
+          <dt>
+            <span jhiTranslate="pruebasApp.catalogo.activo" [ngbTooltip]="'pruebasApp.catalogo.help.activo' | translate">Activo</span>
+          </dt>
           <dd>
             <span>{{ catalogo.activo }}</span>
+          </dd>
+          <dt>
+            <span jhiTranslate="pruebasApp.catalogo.observacion" [ngbTooltip]="'pruebasApp.catalogo.help.observacion' | translate"
+              >Observacion</span
+            >
+          </dt>
+          <dd>
+            <span>{{ catalogo.observacion }}</span>
           </dd>
         </dl>
 

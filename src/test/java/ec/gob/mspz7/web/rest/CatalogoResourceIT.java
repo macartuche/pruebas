@@ -55,6 +55,9 @@ class CatalogoResourceIT {
     private static final Boolean DEFAULT_ACTIVO = false;
     private static final Boolean UPDATED_ACTIVO = true;
 
+    private static final String DEFAULT_OBSERVACION = "AAAAAAAAAA";
+    private static final String UPDATED_OBSERVACION = "BBBBBBBBBB";
+
     private static final String ENTITY_API_URL = "/api/catalogos";
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
     private static final String ENTITY_SEARCH_API_URL = "/api/catalogos/_search";
@@ -91,7 +94,8 @@ class CatalogoResourceIT {
             .descripcion(DEFAULT_DESCRIPCION)
             .nuevocampo(DEFAULT_NUEVOCAMPO)
             .valor(DEFAULT_VALOR)
-            .activo(DEFAULT_ACTIVO);
+            .activo(DEFAULT_ACTIVO)
+            .observacion(DEFAULT_OBSERVACION);
         return catalogo;
     }
 
@@ -107,7 +111,8 @@ class CatalogoResourceIT {
             .descripcion(UPDATED_DESCRIPCION)
             .nuevocampo(UPDATED_NUEVOCAMPO)
             .valor(UPDATED_VALOR)
-            .activo(UPDATED_ACTIVO);
+            .activo(UPDATED_ACTIVO)
+            .observacion(UPDATED_OBSERVACION);
         return catalogo;
     }
 
@@ -148,6 +153,7 @@ class CatalogoResourceIT {
         assertThat(testCatalogo.getNuevocampo()).isEqualTo(DEFAULT_NUEVOCAMPO);
         assertThat(testCatalogo.getValor()).isEqualByComparingTo(DEFAULT_VALOR);
         assertThat(testCatalogo.getActivo()).isEqualTo(DEFAULT_ACTIVO);
+        assertThat(testCatalogo.getObservacion()).isEqualTo(DEFAULT_OBSERVACION);
     }
 
     @Test
@@ -209,7 +215,8 @@ class CatalogoResourceIT {
             .andExpect(jsonPath("$.[*].descripcion").value(hasItem(DEFAULT_DESCRIPCION)))
             .andExpect(jsonPath("$.[*].nuevocampo").value(hasItem(DEFAULT_NUEVOCAMPO)))
             .andExpect(jsonPath("$.[*].valor").value(hasItem(sameNumber(DEFAULT_VALOR))))
-            .andExpect(jsonPath("$.[*].activo").value(hasItem(DEFAULT_ACTIVO.booleanValue())));
+            .andExpect(jsonPath("$.[*].activo").value(hasItem(DEFAULT_ACTIVO.booleanValue())))
+            .andExpect(jsonPath("$.[*].observacion").value(hasItem(DEFAULT_OBSERVACION)));
     }
 
     @Test
@@ -228,7 +235,8 @@ class CatalogoResourceIT {
             .andExpect(jsonPath("$.descripcion").value(DEFAULT_DESCRIPCION))
             .andExpect(jsonPath("$.nuevocampo").value(DEFAULT_NUEVOCAMPO))
             .andExpect(jsonPath("$.valor").value(sameNumber(DEFAULT_VALOR)))
-            .andExpect(jsonPath("$.activo").value(DEFAULT_ACTIVO.booleanValue()));
+            .andExpect(jsonPath("$.activo").value(DEFAULT_ACTIVO.booleanValue()))
+            .andExpect(jsonPath("$.observacion").value(DEFAULT_OBSERVACION));
     }
 
     @Test
@@ -257,7 +265,8 @@ class CatalogoResourceIT {
             .descripcion(UPDATED_DESCRIPCION)
             .nuevocampo(UPDATED_NUEVOCAMPO)
             .valor(UPDATED_VALOR)
-            .activo(UPDATED_ACTIVO);
+            .activo(UPDATED_ACTIVO)
+            .observacion(UPDATED_OBSERVACION);
         CatalogoDTO catalogoDTO = catalogoMapper.toDto(updatedCatalogo);
 
         restCatalogoMockMvc
@@ -277,6 +286,7 @@ class CatalogoResourceIT {
         assertThat(testCatalogo.getNuevocampo()).isEqualTo(UPDATED_NUEVOCAMPO);
         assertThat(testCatalogo.getValor()).isEqualByComparingTo(UPDATED_VALOR);
         assertThat(testCatalogo.getActivo()).isEqualTo(UPDATED_ACTIVO);
+        assertThat(testCatalogo.getObservacion()).isEqualTo(UPDATED_OBSERVACION);
         await()
             .atMost(5, TimeUnit.SECONDS)
             .untilAsserted(() -> {
@@ -289,6 +299,7 @@ class CatalogoResourceIT {
                 assertThat(testCatalogoSearch.getNuevocampo()).isEqualTo(UPDATED_NUEVOCAMPO);
                 assertThat(testCatalogoSearch.getValor()).isEqualByComparingTo(UPDATED_VALOR);
                 assertThat(testCatalogoSearch.getActivo()).isEqualTo(UPDATED_ACTIVO);
+                assertThat(testCatalogoSearch.getObservacion()).isEqualTo(UPDATED_OBSERVACION);
             });
     }
 
@@ -382,7 +393,8 @@ class CatalogoResourceIT {
             .codigo(UPDATED_CODIGO)
             .descripcion(UPDATED_DESCRIPCION)
             .nuevocampo(UPDATED_NUEVOCAMPO)
-            .activo(UPDATED_ACTIVO);
+            .activo(UPDATED_ACTIVO)
+            .observacion(UPDATED_OBSERVACION);
 
         restCatalogoMockMvc
             .perform(
@@ -401,6 +413,7 @@ class CatalogoResourceIT {
         assertThat(testCatalogo.getNuevocampo()).isEqualTo(UPDATED_NUEVOCAMPO);
         assertThat(testCatalogo.getValor()).isEqualByComparingTo(DEFAULT_VALOR);
         assertThat(testCatalogo.getActivo()).isEqualTo(UPDATED_ACTIVO);
+        assertThat(testCatalogo.getObservacion()).isEqualTo(UPDATED_OBSERVACION);
     }
 
     @Test
@@ -420,7 +433,8 @@ class CatalogoResourceIT {
             .descripcion(UPDATED_DESCRIPCION)
             .nuevocampo(UPDATED_NUEVOCAMPO)
             .valor(UPDATED_VALOR)
-            .activo(UPDATED_ACTIVO);
+            .activo(UPDATED_ACTIVO)
+            .observacion(UPDATED_OBSERVACION);
 
         restCatalogoMockMvc
             .perform(
@@ -439,6 +453,7 @@ class CatalogoResourceIT {
         assertThat(testCatalogo.getNuevocampo()).isEqualTo(UPDATED_NUEVOCAMPO);
         assertThat(testCatalogo.getValor()).isEqualByComparingTo(UPDATED_VALOR);
         assertThat(testCatalogo.getActivo()).isEqualTo(UPDATED_ACTIVO);
+        assertThat(testCatalogo.getObservacion()).isEqualTo(UPDATED_OBSERVACION);
     }
 
     @Test
@@ -558,6 +573,7 @@ class CatalogoResourceIT {
             .andExpect(jsonPath("$.[*].descripcion").value(hasItem(DEFAULT_DESCRIPCION)))
             .andExpect(jsonPath("$.[*].nuevocampo").value(hasItem(DEFAULT_NUEVOCAMPO)))
             .andExpect(jsonPath("$.[*].valor").value(hasItem(sameNumber(DEFAULT_VALOR))))
-            .andExpect(jsonPath("$.[*].activo").value(hasItem(DEFAULT_ACTIVO.booleanValue())));
+            .andExpect(jsonPath("$.[*].activo").value(hasItem(DEFAULT_ACTIVO.booleanValue())))
+            .andExpect(jsonPath("$.[*].observacion").value(hasItem(DEFAULT_OBSERVACION)));
     }
 }

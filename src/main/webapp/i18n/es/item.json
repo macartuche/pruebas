@@ -23,6 +23,7 @@
       "codigoCatalogo": "Codigo Catalogo",
       "descripcion": "Descripcion",
       "catalogo": "Catalogo",
+      "pais": "Pais",
       "help": {
         "codigo": "codigo",
         "codigoCatalogo": "codigoCatalogo",

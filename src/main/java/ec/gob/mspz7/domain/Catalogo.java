@@ -54,9 +54,19 @@ public class Catalogo implements Serializable {
     @Column(name = "valor", precision = 21, scale = 2)
     private BigDecimal valor;
 
+    /**
+     * activo
+     */
     @Column(name = "activo")
     @org.springframework.data.elasticsearch.annotations.Field(type = org.springframework.data.elasticsearch.annotations.FieldType.Boolean)
     private Boolean activo;
+
+    /**
+     * observacion
+     */
+    @Column(name = "observacion")
+    @org.springframework.data.elasticsearch.annotations.Field(type = org.springframework.data.elasticsearch.annotations.FieldType.Text)
+    private String observacion;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
@@ -138,6 +148,19 @@ public class Catalogo implements Serializable {
         this.activo = activo;
     }
 
+    public String getObservacion() {
+        return this.observacion;
+    }
+
+    public Catalogo observacion(String observacion) {
+        this.setObservacion(observacion);
+        return this;
+    }
+
+    public void setObservacion(String observacion) {
+        this.observacion = observacion;
+    }
+
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 
     @Override
@@ -167,6 +190,7 @@ public class Catalogo implements Serializable {
             ", nuevocampo='" + getNuevocampo() + "'" +
             ", valor=" + getValor() +
             ", activo='" + getActivo() + "'" +
+            ", observacion='" + getObservacion() + "'" +
             "}";
     }
 }

@@ -24,11 +24,14 @@
       "nuevocampo": "Nuevocampo",
       "valor": "Valor",
       "activo": "Activo",
+      "observacion": "Observacion",
       "help": {
         "codigo": "Codigo de catalogo",
         "descripcion": "descripcion",
         "nuevocampo": "nuevocampo",
-        "valor": "valor"
+        "valor": "valor",
+        "activo": "activo",
+        "observacion": "observacion"
       }
     }
   }

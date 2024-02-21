@@ -2,6 +2,7 @@ package ec.gob.mspz7.domain;
 
 import static ec.gob.mspz7.domain.CatalogoTestSamples.*;
 import static ec.gob.mspz7.domain.ItemTestSamples.*;
+import static ec.gob.mspz7.domain.PaisTestSamples.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import ec.gob.mspz7.web.rest.TestUtil;
@@ -33,5 +34,19 @@ class ItemTest {
 
         item.catalogo(null);
         assertThat(item.getCatalogo()).isNull();
+    }
+
+    @Test
+    void paisTest() throws Exception {
+        Item item = getItemRandomSampleGenerator();
+        Pais paisBack = getPaisRandomSampleGenerator();
+
+        item.setPais(paisBack);
+        assertThat(item.getPais()).isEqualTo(paisBack);
+        assertThat(paisBack.getRegion()).isEqualTo(item);
+
+        item.pais(null);
+        assertThat(item.getPais()).isNull();
+        assertThat(paisBack.getRegion()).isNull();
     }
 }

@@ -1,27 +1,30 @@
 import { ICatalogo, NewCatalogo } from './catalogo.model';
 
 export const sampleWithRequiredData: ICatalogo = {
-  id: 13523,
-  codigo: 'over',
+  id: 685,
+  codigo: 'yet hmph',
 };
 
 export const sampleWithPartialData: ICatalogo = {
-  id: 21417,
-  codigo: 'geez',
-  nuevocampo: 'phooey well-lit excluding',
+  id: 32341,
+  codigo: 'beside tidy epauliere',
+  descripcion: 'chubby sans fully',
+  nuevocampo: 'frantically potentially ultimatum',
+  observacion: 'ultimately drat seldom',
 };
 
 export const sampleWithFullData: ICatalogo = {
-  id: 10178,
-  codigo: 'chubby sans fully',
-  descripcion: 'frantically potentially ultimatum',
-  nuevocampo: 'ultimately drat seldom',
-  valor: 26725.94,
+  id: 26726,
+  codigo: 'supposing however tog',
+  descripcion: 'phooey interleave',
+  nuevocampo: 'gleeful minty below',
+  valor: 9656.42,
   activo: false,
+  observacion: 'outside',
 };
 
 export const sampleWithNewData: NewCatalogo = {
-  codigo: 'aw vacantly luggage',
+  codigo: 'supposing accurate',
   id: null,
 };
 

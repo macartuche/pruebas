@@ -23,6 +23,7 @@ type CatalogoFormGroupContent = {
   nuevocampo: FormControl<ICatalogo['nuevocampo']>;
   valor: FormControl<ICatalogo['valor']>;
   activo: FormControl<ICatalogo['activo']>;
+  observacion: FormControl<ICatalogo['observacion']>;
 };
 
 export type CatalogoFormGroup = FormGroup<CatalogoFormGroupContent>;
@@ -49,6 +50,7 @@ export class CatalogoFormService {
       nuevocampo: new FormControl(catalogoRawValue.nuevocampo),
       valor: new FormControl(catalogoRawValue.valor),
       activo: new FormControl(catalogoRawValue.activo),
+      observacion: new FormControl(catalogoRawValue.observacion),
     });
   }
 

@@ -26,7 +26,10 @@
             <column name="valor" type="decimal(21,2)" remarks="valor">
                 <constraints nullable="true" />
             </column>
-            <column name="activo" type="boolean">
+            <column name="activo" type="boolean" remarks="activo">
+                <constraints nullable="true" />
+            </column>
+            <column name="observacion" type="varchar(255)" remarks="observacion">
                 <constraints nullable="true" />
             </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
@@ -55,6 +58,7 @@
             <column name="nuevocampo" type="string"/>
             <column name="valor" type="numeric"/>
             <column name="activo" type="boolean"/>
+            <column name="observacion" type="string"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
         </loadData>
     </changeSet>

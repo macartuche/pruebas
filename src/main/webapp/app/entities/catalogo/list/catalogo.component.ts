@@ -33,7 +33,7 @@ import { CatalogoDeleteDialogComponent } from '../delete/catalogo-delete-dialog.
   ],
 })
 export class CatalogoComponent implements OnInit {
-  private static readonly NOT_SORTABLE_FIELDS_AFTER_SEARCH = ['codigo', 'descripcion', 'nuevocampo'];
+  private static readonly NOT_SORTABLE_FIELDS_AFTER_SEARCH = ['codigo', 'descripcion', 'nuevocampo', 'observacion'];
 
   catalogos?: ICatalogo[];
   isLoading = false;

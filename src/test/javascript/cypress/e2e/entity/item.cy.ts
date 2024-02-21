@@ -15,7 +15,7 @@ describe('Item e2e test', () => {
   const itemPageUrlPattern = new RegExp('/item(\\?.*)?$');
   const username = Cypress.env('E2E_USERNAME') ?? 'user';
   const password = Cypress.env('E2E_PASSWORD') ?? 'user';
-  const itemSample = { codigo: 'tenth since starter', codigoCatalogo: 'against boo' };
+  const itemSample = { codigo: 'woot', codigoCatalogo: 'yahoo promptly' };
 
   let item;
 
@@ -160,14 +160,14 @@ describe('Item e2e test', () => {
     });
 
     it('should create an instance of Item', () => {
-      cy.get(`[data-cy="codigo"]`).type('inwardly');
-      cy.get(`[data-cy="codigo"]`).should('have.value', 'inwardly');
+      cy.get(`[data-cy="codigo"]`).type('vote');
+      cy.get(`[data-cy="codigo"]`).should('have.value', 'vote');
 
-      cy.get(`[data-cy="codigoCatalogo"]`).type('oh reign');
-      cy.get(`[data-cy="codigoCatalogo"]`).should('have.value', 'oh reign');
+      cy.get(`[data-cy="codigoCatalogo"]`).type('collaboration blanket intersect');
+      cy.get(`[data-cy="codigoCatalogo"]`).should('have.value', 'collaboration blanket intersect');
 
-      cy.get(`[data-cy="descripcion"]`).type('heavily clearing whose');
-      cy.get(`[data-cy="descripcion"]`).should('have.value', 'heavily clearing whose');
+      cy.get(`[data-cy="descripcion"]`).type('genuine near posterior');
+      cy.get(`[data-cy="descripcion"]`).should('have.value', 'genuine near posterior');
 
       cy.get(entityCreateSaveButtonSelector).click();
 

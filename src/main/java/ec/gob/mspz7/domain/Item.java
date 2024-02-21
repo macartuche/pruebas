@@ -1,5 +1,6 @@
 package ec.gob.mspz7.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import java.io.Serializable;
@@ -50,6 +51,11 @@ public class Item implements Serializable {
 
     @ManyToOne(fetch = FetchType.LAZY)
     private Catalogo catalogo;
+
+    @JsonIgnoreProperties(value = { "region" }, allowSetters = true)
+    @OneToOne(fetch = FetchType.LAZY, mappedBy = "region")
+    @org.springframework.data.annotation.Transient
+    private Pais pais;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
@@ -115,6 +121,25 @@ public class Item implements Serializable {
 
     public Item catalogo(Catalogo catalogo) {
         this.setCatalogo(catalogo);
+        return this;
+    }
+
+    public Pais getPais() {
+        return this.pais;
+    }
+
+    public void setPais(Pais pais) {
+        if (this.pais != null) {
+            this.pais.setRegion(null);
+        }
+        if (pais != null) {
+            pais.setRegion(this);
+        }
+        this.pais = pais;
+    }
+
+    public Item pais(Pais pais) {
+        this.setPais(pais);
         return this;
     }
 

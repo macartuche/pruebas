@@ -1,6 +1,7 @@
 package ec.gob.mspz7.service;
 
 import ec.gob.mspz7.service.dto.ItemDTO;
+import java.util.List;
 import java.util.Optional;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -40,6 +41,13 @@ public interface ItemService {
      * @return the list of entities.
      */
     Page<ItemDTO> findAll(Pageable pageable);
+
+    /**
+     * Get all the ItemDTO where Pais is {@code null}.
+     *
+     * @return the {@link List} of entities.
+     */
+    List<ItemDTO> findAllWherePaisIsNull();
 
     /**
      * Get the "id" item.

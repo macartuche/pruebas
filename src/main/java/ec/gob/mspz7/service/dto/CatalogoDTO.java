@@ -40,7 +40,17 @@ public class CatalogoDTO implements Serializable {
     @Schema(description = "valor")
     private BigDecimal valor;
 
+    /**
+     * activo
+     */
+    @Schema(description = "activo")
     private Boolean activo;
+
+    /**
+     * observacion
+     */
+    @Schema(description = "observacion")
+    private String observacion;
 
     public Long getId() {
         return id;
@@ -90,6 +100,14 @@ public class CatalogoDTO implements Serializable {
         this.activo = activo;
     }
 
+    public String getObservacion() {
+        return observacion;
+    }
+
+    public void setObservacion(String observacion) {
+        this.observacion = observacion;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -121,6 +139,7 @@ public class CatalogoDTO implements Serializable {
             ", nuevocampo='" + getNuevocampo() + "'" +
             ", valor=" + getValor() +
             ", activo='" + getActivo() + "'" +
+            ", observacion='" + getObservacion() + "'" +
             "}";
     }
 }

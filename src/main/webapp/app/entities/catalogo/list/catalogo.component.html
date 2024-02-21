@@ -106,6 +106,14 @@
                 <fa-icon class="p-1" icon="sort"></fa-icon>
               </div>
             </th>
+            <th scope="col" jhiSortBy="observacion">
+              <div class="d-flex">
+                <span jhiTranslate="pruebasApp.catalogo.observacion">Observacion</span>
+                @if (!currentSearch) {
+                  <fa-icon class="p-1" icon="sort"></fa-icon>
+                }
+              </div>
+            </th>
             <th scope="col"></th>
           </tr>
         </thead>
@@ -120,6 +128,7 @@
               <td>{{ catalogo.nuevocampo }}</td>
               <td>{{ catalogo.valor }}</td>
               <td>{{ catalogo.activo }}</td>
+              <td>{{ catalogo.observacion }}</td>
               <td class="text-end">
                 <div class="btn-group">
                   <a [routerLink]="['/catalogo', catalogo.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">

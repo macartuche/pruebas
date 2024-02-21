@@ -1,0 +1,27 @@
+{
+  "annotations": {
+    "changelogDate": "20240220172120"
+  },
+  "applications": "*",
+  "documentation": "The Entity entity.\\n@author A true hipster",
+  "dto": "mapstruct",
+  "entityTableName": "pais",
+  "fields": [
+    {
+      "documentation": "nombre",
+      "fieldName": "nombre",
+      "fieldType": "String"
+    }
+  ],
+  "name": "Pais",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "item",
+      "relationshipName": "region",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

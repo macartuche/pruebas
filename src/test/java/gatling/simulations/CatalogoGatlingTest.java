@@ -82,6 +82,7 @@ public class CatalogoGatlingTest extends Simulation {
                                 ", \"nuevocampo\": \"SAMPLE_TEXT\"" +
                                 ", \"valor\": 0" +
                                 ", \"activo\": null" +
+                                ", \"observacion\": \"SAMPLE_TEXT\"" +
                                 "}"
                             )
                         )

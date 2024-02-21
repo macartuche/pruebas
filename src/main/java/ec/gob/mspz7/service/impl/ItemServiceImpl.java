@@ -6,7 +6,11 @@ import ec.gob.mspz7.repository.search.ItemSearchRepository;
 import ec.gob.mspz7.service.ItemService;
 import ec.gob.mspz7.service.dto.ItemDTO;
 import ec.gob.mspz7.service.mapper.ItemMapper;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -79,6 +83,20 @@ public class ItemServiceImpl implements ItemService {
     public Page<ItemDTO> findAll(Pageable pageable) {
         log.debug("Request to get all Items");
         return itemRepository.findAll(pageable).map(itemMapper::toDto);
+    }
+
+    /**
+     *  Get all the items where Pais is {@code null}.
+     *  @return the list of entities.
+     */
+    @Transactional(readOnly = true)
+    public List<ItemDTO> findAllWherePaisIsNull() {
+        log.debug("Request to get all items where Pais is null");
+        return StreamSupport
+            .stream(itemRepository.findAll().spliterator(), false)
+            .filter(item -> item.getPais() == null)
+            .map(itemMapper::toDto)
+            .collect(Collectors.toCollection(LinkedList::new));
     }
 
     @Override

@@ -18,6 +18,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -142,10 +143,18 @@ public class ItemResource {
      * {@code GET  /items} : get all the items.
      *
      * @param pageable the pagination information.
+     * @param filter the filter of the request.
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of items in body.
      */
     @GetMapping("")
-    public ResponseEntity<List<ItemDTO>> getAllItems(@org.springdoc.core.annotations.ParameterObject Pageable pageable) {
+    public ResponseEntity<List<ItemDTO>> getAllItems(
+        @org.springdoc.core.annotations.ParameterObject Pageable pageable,
+        @RequestParam(name = "filter", required = false) String filter
+    ) {
+        if ("pais-is-null".equals(filter)) {
+            log.debug("REST request to get all Items where pais is null");
+            return new ResponseEntity<>(itemService.findAllWherePaisIsNull(), HttpStatus.OK);
+        }
         log.debug("REST request to get a page of Items");
         Page<ItemDTO> page = itemService.findAll(pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), page);

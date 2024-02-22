@@ -1,11 +1,13 @@
 package ec.gob.mspz7.service.impl;
 
+import ec.gob.mspz7.domain.MiPais;
 import ec.gob.mspz7.domain.Pais;
 import ec.gob.mspz7.repository.PaisRepository;
 import ec.gob.mspz7.repository.search.PaisSearchRepository;
 import ec.gob.mspz7.service.PaisService;
 import ec.gob.mspz7.service.dto.PaisDTO;
 import ec.gob.mspz7.service.mapper.PaisMapper;
+import java.util.List;
 import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -100,5 +102,11 @@ public class PaisServiceImpl implements PaisService {
     public Page<PaisDTO> search(String query, Pageable pageable) {
         log.debug("Request to search for a page of Pais for query {}", query);
         return paisSearchRepository.search(query, pageable).map(paisMapper::toDto);
+    }
+
+    @Override
+    public List<MiPais> obtenerPersonalizado() {
+        //logica de negocios
+        return paisRepository.buscarPersonalizado();
     }
 }

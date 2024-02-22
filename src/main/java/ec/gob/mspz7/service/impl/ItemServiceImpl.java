@@ -109,6 +109,7 @@ public class ItemServiceImpl implements ItemService {
     @Override
     public void delete(Long id) {
         log.debug("Request to delete Item : {}", id);
+
         itemRepository.deleteById(id);
         itemSearchRepository.deleteFromIndexById(id);
     }

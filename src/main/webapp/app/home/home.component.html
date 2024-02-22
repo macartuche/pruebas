@@ -4,16 +4,17 @@
   </div>
 
   <div class="col-md-9">
-    <h1 class="display-4"><span jhiTranslate="home.title">¡Bienvenido, Java Hipster!</span> (Pruebas)</h1>
+    <h1 class="display-4"><span>SALUDOS</span> (Pruebas)</h1>
 
-    <p class="lead" jhiTranslate="home.subtitle">Esta es su página de inicio</p>
+    <p class="lead">HOLA</p>
+    <div>HOLA 2</div>
 
     <div>
       @if (account !== null) {
         <div class="alert alert-success">
           @if (account) {
             <span id="home-logged-message" jhiTranslate="home.logged.message" [translateValues]="{ username: account.login }"
-              >Está conectado como &quot;{{ account.login }}&quot;.</span
+              >Está conectado como---------------------------- &quot;{{ account.login }}&quot;.</span
             >
           }
         </div>

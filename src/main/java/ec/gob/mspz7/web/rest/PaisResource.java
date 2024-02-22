@@ -1,5 +1,7 @@
 package ec.gob.mspz7.web.rest;
 
+import ec.gob.mspz7.domain.MiPais;
+import ec.gob.mspz7.repository.CatalogoRepository;
 import ec.gob.mspz7.repository.PaisRepository;
 import ec.gob.mspz7.service.PaisService;
 import ec.gob.mspz7.service.dto.PaisDTO;
@@ -18,6 +20,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import tech.jhipster.web.util.HeaderUtil;
 import tech.jhipster.web.util.PaginationUtil;
@@ -198,5 +202,10 @@ public class PaisResource {
         } catch (RuntimeException e) {
             throw ElasticsearchExceptionMapper.mapException(e);
         }
+    }
+
+    @GetMapping("/personalizado")
+    public ResponseEntity<List<MiPais>> llamadaResource() {
+        return ResponseEntity.ok().body(paisService.obtenerPersonalizado());
     }
 }
